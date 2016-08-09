@@ -1,11 +1,4 @@
-.global-nav{
-	background-color: #2e99e7 !important;
-	background:-webkit-linear-gradient(bottom,#2e99e7,#6BB7ED);
-	color: white;
-    text-align: center;
-    height: 45px;
-    background-color: #191919;
-}
+
 nav.global-nav:after {
     content: '';
     display: block;
@@ -15,8 +8,14 @@ nav.global-nav:after {
     visibility: hidden;
 }
 #userAccountInfo {
-    color:#7a7a7e;
+    /*color:#7a7a7e;*/
     margin-right:15px;
+    color:#FFFFFF !important
+}
+.topic_switch{
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
 }
 .brand {
     float: left;
@@ -29,7 +28,6 @@ nav.global-nav:after {
     }
     .brand > span {
         font-size: 16px;
-        float: left;
         display: inline-block;
         margin-top: 25px;
         margin-left:3px;
@@ -38,11 +36,11 @@ nav.global-nav:after {
     font-size: 28px;
     line-height: 1.5;
 }
-.menu-list {
+.menu-list-nav {
     float: right;
     margin-bottom: 0px;
 }
- .menu-list > li {
+ .menu-list-nav > li {
         display: inline-block;
         font-size: 14px;
     }

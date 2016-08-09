@@ -5,6 +5,15 @@
  * @require ../highlight/github.css
  */
 
+ .global-nav{
+	background-color: #2e99e7 !important;
+	background:-webkit-linear-gradient(bottom,#2e99e7,#6BB7ED);
+	color: white;
+    text-align: center;
+    height: 45px;
+    background-color: #191919;
+}
+
 .clearfix:after {
     content: ' ';
     display: block;
@@ -35,18 +44,18 @@
     background: #f2f2f2;
     z-index: 10000;
 }
-.site-menu-right{
+/*.site-menu-right{
     position: absolute;
     top: 60px; right: 0;
     bottom: 0;
     width: 210px;
     background: #f2f2f2;
     z-index: 10000;
-}
+}*/
 
 .site-content {
     position: absolute;
-    top: 60px; left: 180px;
+    top: 60px; left: 0px;
     bottom: 0; right:210px;
 }
 

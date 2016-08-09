@@ -1,0 +1,22 @@
+﻿body {font: 12px "lucida Grande",Verdana,"Microsoft YaHei";
+      /*margin-top:10%;background: url('../../Images/bg_login.png') no-repeat;*/
+
+}
+
+div#divbg{ position:fixed; top:0; left:0; bottom:0; right:0; z-index:-1; } 
+div#divbg > img { height:100%; width:100%; border:0; } 
+
+
+.errorMessage{ text-align:left;color:red;padding-left:0px;padding-bottom:10px;margin-left :80px;margin-top :10px;}
+
+
+
+.uncheck { clear:both; height: 18px;width: 18px;background: url(../../Images/icon_3.png) no-repeat -74px -163px;display:block;float:left;margin-top:10px;margin-bottom:10px;}
+.check { clear:both;height: 18px;width: 18px;background: url(../../Images/icon_3.png) no-repeat -92px -163px;display:block;float:left;margin-top:10px;margin-bottom:10px;}
+.checktext {float:left;margin-top:10px;margin-bottom:10px;margin-left:5px;cursor:pointer;color :#7C7C7E;}
+.useraccount {width :300px;height :30px;margin-top :10px; margin-left :20px;background-color :transparent ;border-width :0px;color :#7C7C7E;font-size :25px;}
+.password {width: 300px; height: 30px;margin-top:30px; margin-left: 20px; background-color: transparent; border-width: 0px; color: #7C7C7E; font-size: 25px;}
+.loginbtn{-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; 
+           width :40px;height :40px; background-color :transparent ;border-width :0px;}
+.logindiv{margin-left: 60px; margin-top: 400px; width: 370px; height: 115px; position :relative;
+          background-image: url(../../Images/login_input.png);}

@@ -1,0 +1,113 @@
+﻿<div id="SumaryInfo" class="sumary-info" style="height: 685px">
+    <div id="weather" class="weather"></div>
+
+    <!-- 安全运行天数 -->
+    <div class="safe-day">
+        <div class="safe-day-label">安全运行天数</div>
+        <div class="safe-day-num">
+            <span id="S_SafeDay" style="font-family:Roboto-Light;"></span>
+        </div>
+    </div>
+
+
+    <div style="width: 100%; height: 10px;"></div>
+    <div class="sumary_line" style="width: 100%; height: 1px; background-color: #000000;"></div>
+    <div style="width: 100%; height: 5px;"></div>
+
+    <!-- 告警列表 -->>
+    <div style="width: 100%; display: block; height: 34px;">
+        <div style="width: 10%; float: left; color: red;">
+            <img src="Images/horn.png" style="width: 20px; height: 20px;" />
+            <audio id="alarmAudio" src="common/audio/alarm.wav"></audio>
+            <audio id="notifyAudio" src="common/audio/notify.wav"></audio>
+        </div>
+        <div id="AlarmPRList" style="text-align: left; width: 90%; float: right; height: 34px; overflow-y: auto; display: inline-block; color: red; font-family: 微软雅黑; font-size: 12px;">
+        </div>
+    </div>
+
+    <div style="width: 100%; height: 5px;"></div>
+    <div class="sumary_line" style="width: 100%; height: 1px; background-color: #000000;"></div>
+    <div style="width: 100%; height: 15px;"></div>
+
+
+    <div>
+        <div class="op-process">
+            <div style="width: 100%; height: 17px; display: table-row;">
+                <a href="#" id="aproAlarmCount" class="EventInfo">
+                    告&nbsp;&nbsp;&nbsp;警：
+                    <span id="A_AlarmCount" style="color: #C71D1D; font-size: 16px;font-family:Roboto-Light;"></span>
+                </a>
+                <a href="#" id="aproConfirm" class="EventInfo">
+                    已接单：
+                    <span id="A_Confirm" style="color: #DB5519; font-size: 16px;font-family:Roboto-Light;"></span>
+                </a>
+            </div>
+            <div style="width: 100%; height: 20px; display: table-row; margin-top: -10px;">
+                <a href="#" id="aproScene" class="EventInfo">
+                    处理中：
+                    <span id="A_Scene" style="color: #EBAD32; font-size: 16px;font-family:Roboto-Light;"></span>
+                </a>
+                <a href="#" id="aproCompletion" class="EventInfo">
+                    已完成：
+                    <span id="A_Completion" style="color: #299F3A; font-size: 16px;font-family:Roboto-Light;"></span>
+                </a>
+            </div>
+        </div>
+
+        <div style="width: 100%; height: 17px;">
+        </div>
+
+        <div class="device-status">
+            <div class="rmsp-div-left">总&nbsp;&nbsp;数：<span id="S_Sum" style="font-family:Roboto-Light;">0</span> </div>
+            <div class="rmsp-div-right">维&nbsp;&nbsp;修：<span id="S_Repair" style="font-family:Roboto-Light;">0</span> </div>
+            <div class="rmsp-div-left">运&nbsp;&nbsp;行：<span id="S_Run" style="font-family:Roboto-Light;">0</span></div>
+            <div class="rmsp-div-right">保&nbsp;&nbsp;养：<span id="S_Maintain" style="font-family:Roboto-Light;">0</span></div>
+            <div class="rmsp-div-left">停&nbsp;&nbsp;止：<span id="S_Stop" style="font-family:Roboto-Light;">0</span></div>
+            <div class="rmsp-div-right">巡&nbsp;&nbsp;检：<span id="S_Patrol" style="font-family:Roboto-Light;">0</span></div>
+        </div>
+
+        <div style="width: 100%; height: 9px;">
+        </div>
+        <div class="sumary_line" style="width: 100%; height: 1px; background-color: #000000;"></div>
+
+        <div style="text-align: center; margin-bottom: 18px; margin-top: 10px; position: relative">
+            <div style="font-size: 22px; color: green; position: absolute; top: 20px; 
+                 text-align: center; width: 100%;font-family:Roboto-Light;">
+                <span id="MI_Energy" style="margin-left: 10px;">0</span>
+                <span id="MD_Energy" style="font-size: 12px;">kWh</span>
+            </div>
+            <embed src="Images/bat.svg" width="120" style="width:150px;height:70px;"
+                   type="image/svg+xml"
+                   pluginspage="http://www.adobe.com/svg/viewer/install/" />
+            <div style="color: green; color: #7c7c7e;">电能消耗</div>
+        </div>
+
+        <div class="dashboard">
+            <div style="top: 54px; width: 100%; text-align: center; position: absolute; color: green; font-size: 16px;font-family:Roboto-Light;">
+                <span id="MI_Perfect">0</span>
+                <span id="MD_Perfect" style="font-size: 12px">%</span>
+            </div>
+            <div style="top: 106px; width: 100%; text-align: center; position: absolute; color: green; font-size: 12px; color: #7c7c7e">
+                设施完好率
+            </div>
+            <div style="width: 100%; text-align: center;">
+                <embed id="deviceGoodRate" src="Images/devstat.svg" width="140" style="width:150px;height:150px;"
+                       type="image/svg+xml"
+                       pluginspage="http://www.adobe.com/svg/viewer/install/" />
+            </div>
+            <div style="top: 215px; width: 100%; text-align: center; position: absolute; color: green; font-size: 16px;font-family:Roboto-Light;">
+                <span id="MI_Free">0</span>
+                <span id="MD_Free" style="font-size: 12px">%</span>
+            </div>
+            <div style="top: 275px; width: 100%; text-align: center; color: #7c7c7e; position: absolute; font-size: 12px;">
+                人员空闲率
+            </div>
+            <div style="width: 100%; text-align: center;">
+                <embed id="userFreeRate" src="Images/dash.svg" width="144" style="width:150px;height:150px;"
+                       type="image/svg+xml"
+                       pluginspage="http://www.adobe.com/svg/viewer/install/" />
+            </div>
+        </div>
+
+    </div>
+</div>

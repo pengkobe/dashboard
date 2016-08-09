@@ -1,0 +1,20 @@
+﻿.efos-nav {
+    display: table;
+    margin-top: 5px;
+    width: 100%;
+}
+
+    .efos-nav > div {
+        display: table-cell;
+    }
+
+.nav-cell {
+    cursor: pointer;
+    background-color: #272728;
+    padding: 5px 8px;
+    border-left: solid 1px #111;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: center;
+    width: 100px;
+}
