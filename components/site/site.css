@@ -55,8 +55,9 @@
 
 .site-content {
     position: absolute;
-    top: 60px; left: 0px;
-    bottom: 0; right:210px;
+    top: 60px; left: 180px;
+    bottom: 0; 
+    right:0px;
 }
 
 .site-footer {

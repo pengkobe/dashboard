@@ -37,7 +37,7 @@ __inline('static/jQuery-plugin/datepicker/bootstrap-datetimepicker.zh-CN.js');
 /**
  * highcharts
  */
-__inline('static/highcharts/highstock.js');
+__inline('static/highcharts/highcharts.src.js');
 __inline('static/highcharts/highcharts-more.js');
 __inline('static/highcharts/themes/gray.js');
 

@@ -78,9 +78,11 @@ exports.load = function(context, preload){
                     if(typeof page.getMarkdown === 'function'){
                         content = '<div class="site-view-inner markdown-body">' + page.getMarkdown() + '</div>';
                     } else {
-                        content = page.getHTML();
+                        //content = page.getHTML();
+                        
                     }
-                    dom.innerHTML = content;
+                    page.render(dom);
+                   // dom.innerHTML = content;
                 }
                 dom.className = dom.className + ' active';
                 if(typeof title !== 'undefined'){
