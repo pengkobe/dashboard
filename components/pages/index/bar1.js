@@ -1,116 +1,140 @@
-function init(height) {
+module.exports = init;
+
+function init(height, data, theme) {
     var chart;
-    var height=$("#container1").height();
+    // 模拟数据
+    if (!data) {
+        data = {
+            categories: ['0', '2', '4', '6', '8', '10', '12', '14', '16', '18', '20', '22', '24'],
+            title: '电能逐时能耗趋势',
+            maxArr: [7500, 7500, 7500, 7500, 7500, 7500, 7500, 7500, 7500, 7500, 7500, 7500, 7500],
+            energyArr: [6000, 5680, 4440, 3220, 1115, 5516, 6615, 5680, 4440, 3220, 1115, 5516, 6615],
+            tempArr: [12, 13, 25, 10, 19, 15, 5, 13, 25, 10, 19, 15, 5]
+        };
+    }
+    // 主题配置
+    var themeConfig = {
+        backgroundColor: '#fff',
+    };
+    if (theme == "black") {
+    }
+
     chart = new Highcharts.Chart({
         chart: {
-            renderTo: 'container1', 
-            height:height,         //放置图表的容器  
-            plotBackgroundColor: null,
+            renderTo: 'container1',
+            height: height,
+            backgroundColor: '#fff',
+            plotBackgroundColor: '#fff',
             plotBorderWidth: null,
-            zoomType: 'xy' //支持图表放大缩小的范围  
+            zoomType: 'xy'
         },
         title: {
-            text: '电能逐时能耗趋势'
+            text: data.title,
+            style: {
+                color: '#333'
+            }
         },
         subtitle: {
-            text: '短信发送数与成功率'
+            text: ''
         },
         xAxis: [{
-            categories: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+            categories: data.categories,
             labels: {
-                rotation: -45, //字体倾斜  
+                rotation: 0,
                 align: 'right',
                 style: { font: 'normal 13px 宋体' }
             }
         }],
-        yAxis: [{ // Primary yAxis  
+        yAxis: [{
+            //能耗
             title: {
-                text: '成功率 (%)',
-                style: {
-                    color: '#89A54E'
-                }
+                text: '能耗',
+                style: { color: '#444' }
             },
             labels: {
-                format: '{value} 条',//格式化Y轴刻度  
-                style: {
-                    color: '#89A54E'
-                }
-            }
-            ,
-            max: 100
-        }, { // Secondary yAxis  
+                format: '{value} kWh',
+                style: { color: '#777' }
+            },
+            max: 7500
+        }, {
+                // 温度
                 title: {
-                    text: '发送数 (条)',
+                    text: '温度 ( ℃)',
                     style: {
-                        color: '#4572A7'
+                        color: '#444'
                     }
                 },
                 labels: {
-                    format: '{value} %',
+                    format: '{value} ℃',
                     style: {
-                        color: '#4572A7'
+                        color: '#777'
                     }
                 },
-                opposite: true
+                opposite: true,
+                max: 30
             }],
-        tooltip: {
-            shared: true, //公用一个提示框  
-            formatter: function () {
-                return this.x + "<br>"
-                    + "<span style='color:#4572A7'>发送数：" + this.points[0].y + " 条</span><br>"
-                    + "<span style='color:#89A54E'>成功率：" + this.points[1].y + " %</span>"
-                    ;
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0,
+                pointWidth: 8
+            },
+            series: {
+                marker: {
+                    enabled: false,
+                }
             }
         },
-        //图例样式设置  
+        tooltip: {
+            shared: true,
+            formatter: function () {
+                return this.x + "<br>"
+                    + "<span style='color:#4572A7'>能耗：" + this.points[0].y + " kWh</span><br>"
+                    + "<span style='color:#89A54E'>温度：" + this.points[1].y + " ℃</span>";
+            }
+        },
         legend: {
-            layout: 'vertical',
+            layout: 'horizontal',
             align: 'right',
             x: 0,
             y: 0,
             verticalAlign: 'top',
-           
             floating: true,
-          //  backgroundColor: '#FFFFFF'
         },
         series: [{
-            name: '发送数',
-            color: '#4572A7',
+            yAxis: 0,
+            name: '能耗(上限)',
+            color: 'rgba(108, 166, 205,.2)',
             type: 'column',
-            yAxis: 1,
-            data: [50, 70, 100, 120, 145, 176, 135],
+            data: data.maxArr,
             tooltip: {
                 formatter: function () {
-                    return this.y + "条";
-                }
-            }
-
-        },{
-            name: '发送数',
-            color: '#4572A7',
-            type: 'column',
-            yAxis: 1,
-            data: [70, 90, 110, 120, 165, 176, 175],
-            tooltip: {
-                formatter: function () {
-                    return this.y + "条";
+                    return this.y + "kWh";
                 }
             }
         }, {
-                name: '成功率',
-                color: '#89A54E',
-                type: 'spline',
                 yAxis: 0,
-                data: [80, 22.5, 45, 90, 99, 35, 45],
+                name: '能耗',
+                color: '#4682B4',
+                type: 'column',
+                data: data.energyArr,
                 tooltip: {
-                    valueSuffix: ' %'
+                    formatter: function () {
+                        return this.y + "kWh";
+                    }
+                }
+            },
+            {
+                yAxis: 1,
+                name: '温度',
+                color: '#FF0000',
+                type: 'spline',
+                lineWidth: 1,
+                data: data.tempArr,
+                tooltip: {
+                    valueSuffix: ' ℃'
                 }
             }]
     });
-
-// setTimeout(function () {
-//            chart.reflow();
-//  }, 2000);
 }
-
-module.exports = init;

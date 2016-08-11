@@ -1,105 +1,124 @@
-function init(height) {
+function init(height,data,theme) {
     var chart;
+    // 模拟数据
+    if (!data) {
+        data = {
+            categories: ['1#主机', '2#主机', '3#主机', '4#主机', '5#主机', '6#主机',
+                '7#主机', '8#主机', '9#主机', '10#主机', '11#主机'],
+            title: '重点设备日能耗',
+            energyArr: [50, 70, 100, 120, 145, 176, 135, 115, 125, 35, 105],
+            runtimeArr: [80, 22.5, 45, 90, 99, 35, 45, 25, 35, 23, 40]
+        };
+    }
 
     chart = new Highcharts.Chart({
         chart: {
-            renderTo: 'container2',          //放置图表的容器  
+            renderTo: 'container2',         
             height: height,
+            backgroundColor: '#fff',
             plotBackgroundColor: null,
             plotBorderWidth: null,
-            zoomType: 'xy' //支持图表放大缩小的范围  
+            zoomType: 'xy'
         },
         title: {
-            text: '重点设备日能耗'
+            text: data.title,
+            style: {
+                color: '#333'
+            }
         },
         subtitle: {
             text: ''
         },
         xAxis: [{
-            categories: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+            categories: data.categories,
             labels: {
-                rotation: -45, //字体倾斜  
-                align: 'right',
+                rotation: 45, 
+                align: 'left',
                 style: { font: 'normal 13px 宋体' }
             }
         }],
-        yAxis: [{ // Primary yAxis  
+        yAxis: [{
+            // 能耗
             title: {
-                text: '成功率 (%)',
+                text: '能耗',
                 style: {
-                    color: '#89A54E'
+                    color: '#444'
                 }
             },
             labels: {
-                format: '{value} 条',//格式化Y轴刻度  
+                format: '{value} kWh',//格式化Y轴刻度  
                 style: {
-                    color: '#89A54E'
+                    color: '#777'
                 }
             }
             ,
             max: 100
-        }, { // Secondary yAxis  
+        }, {
+                // 运行时间
                 title: {
-                    text: '发送数 (条)',
+                    text: '运行时间',
                     style: {
-                        color: '#4572A7'
+                        color: '#444'
                     }
                 },
                 labels: {
-                    format: '{value} %',
+                    format: '{value} h',
                     style: {
-                        color: '#4572A7'
+                        color: '#777'
                     }
                 },
                 opposite: true
             }],
         tooltip: {
-            shared: true, //公用一个提示框  
+            shared: true,
             formatter: function () {
                 return this.x + "<br>"
-                    + "<span style='color:#4572A7'>发送数：" + this.points[0].y + " 条</span><br>"
-                    + "<span style='color:#89A54E'>成功率：" + this.points[1].y + " %</span>"
+                    + "<span style='color:#4572A7'>能耗" + this.points[0].y + " kWh</span><br>"
+                    + "<span style='color:#89A54E'>运行时间" + this.points[1].y + " h</span>"
                     ;
             }
         },
-        //图例样式设置  
+        plotOptions: {
+            column: {
+                pointWidth: 12
+            },
+            series: {
+                marker: {
+                    fillColor: '#EEEE00',
+                }
+            }
+        },
         legend: {
-            layout: 'vertical',
+            layout: 'horizontal',
             align: 'right',
             x: 0,
             y: 0,
             verticalAlign: 'top',
             floating: true,
-            // backgroundColor: '#FFFFFF'
         },
         series: [{
-            name: '发送数',
-            color: '#4572A7',
+            name: '能耗',
+            color: '#458B00',
             type: 'column',
             yAxis: 1,
-            data: [50, 70, 100, 120, 145, 176, 135],
+            data: data.energyArr,
             tooltip: {
                 formatter: function () {
-                    return this.y + "条";
+                    return this.y + "kWh";
                 }
             }
         }, {
-                name: '成功率',
-                color: '#FF0000',
+                name: '运行时间',
+                color: '#7FFFD4',
                 type: 'spline',
                 yAxis: 0,
-                data: [80, 22.5, 45, 90, 99, 35, 45],
+                lineWidth: 1,
+                data: data.runtimeArr,
                 tooltip: {
-                    valueSuffix: ' %'
+                    valueSuffix: ' h'
                 }
             }]
     });
-
-
-    setTimeout(function () {
-        chart.reflow();
-    }, 2000);
-
 }
 
 module.exports = init;

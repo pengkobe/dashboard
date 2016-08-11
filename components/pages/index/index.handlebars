@@ -1,62 +1,62 @@
 <div class="energy-analysis">
     <div class="timespan-tab">
-        <!--timespan-tab-->
-        <div class="timespan-tab-cycle-block"  id="time_tab_day_picker">
+        <!--时间段选择Tab页-->
+        <div class="timespan-tab-cycle-block" id="time_tab_day_picker">
                 <div class="timespan-tab-label">日</div>        
                 <div class="timespan-tab-cycle-date-block">          
                     <div class="timespan-tab-left-nav" >
-                        <img type="button" src="{{leftimg}}" >
+                        <img  src="{{leftimg}}" >
                     </div>      
                     <div class="timespan-tab-date-input">
                         <input title="格式：YYYY.MM.dd" value="2016.08.10">
                     </div>           
-                    <div  class="timespan-tab-right-nav" >
-                        <img  type="button" src="{{rightimg}}" >
+                    <div class="timespan-tab-right-nav" >
+                        <img  src="{{rightimg}}" >
                     </div>        
                 </div>   
          </div>
 
-           <div class="timespan-tab-cycle-block"  id="time_tab_day_picker">
-                <div class="timespan-tab-label">日</div>        
+           <div class="timespan-tab-cycle-block"  id="time_tab_week_picker">
+                <div class="timespan-tab-label">周</div>        
                 <div class="timespan-tab-cycle-date-block">          
                     <div class="timespan-tab-left-nav" >
-                        <img type="button" src="{{leftimg}}" >
+                        <img  src="{{leftimg}}" >
                     </div>      
                     <div class="timespan-tab-date-input">
                         <input title="格式：YYYY.MM.dd" value="2016.08.10">
                     </div>           
                     <div  class="timespan-tab-right-nav" >
-                        <img  type="button" src="{{rightimg}}" >
+                        <img   src="{{rightimg}}" >
                     </div>        
                 </div>   
          </div>
 
-           <div class="timespan-tab-cycle-block"  id="time_tab_day_picker">
-                <div class="timespan-tab-label">日</div>        
+           <div class="timespan-tab-cycle-block"  id="time_tab_month_picker">
+                <div class="timespan-tab-label">月</div>        
                 <div class="timespan-tab-cycle-date-block">          
                     <div class="timespan-tab-left-nav" >
-                        <img type="button" src="{{leftimg}}" >
+                        <img  src="{{leftimg}}" >
                     </div>      
                     <div class="timespan-tab-date-input">
                         <input title="格式：YYYY.MM.dd" value="2016.08.10">
                     </div>           
                     <div  class="timespan-tab-right-nav" >
-                        <img  type="button" src="{{rightimg}}" >
+                        <img   src="{{rightimg}}" >
                     </div>        
                 </div>   
          </div>
 
-           <div class="timespan-tab-cycle-block"  id="time_tab_day_picker">
-                <div class="timespan-tab-label">日</div>        
+           <div class="timespan-tab-cycle-block"  id="time_tab_year_picker">
+                <div class="timespan-tab-label">年</div>        
                 <div class="timespan-tab-cycle-date-block">          
                     <div class="timespan-tab-left-nav" >
-                        <img type="button" src="{{leftimg}}" >
+                        <img  src="{{leftimg}}" >
                     </div>      
                     <div class="timespan-tab-date-input">
                         <input title="格式：YYYY.MM.dd" value="2016.08.10">
                     </div>           
                     <div  class="timespan-tab-right-nav" >
-                        <img  type="button" src="{{rightimg}}" >
+                        <img   src="{{rightimg}}" >
                     </div>        
                 </div>   
          </div>
@@ -64,30 +64,46 @@
 
      <div class="data-tab">
         <div class="sumary-title">
-            <!--sumary-title-->
+            <!-- 图标菜单 -->
+            <div class="sumary-title-menu">
+                     <div class="sumary-title-menu-img" >
+                         <img  src="{{switch}}" > </div>      
+                     <div class="sumary-title-menu-img" >
+                         <img  src="{{switch0}}" ></div>      
+                     <div class="sumary-title-menu-img" >
+                         <img  src="{{switch1}}" > </div>      
+                     <div class="sumary-title-menu-img" > 
+                         <img  src="{{switch2}}" ></div>      
+            </div>
+          
+            <!-- 数据汇总 -->
             <div class="sumary-title-block">
-                <span class="sumary-title-data">0.0</span>
-                <span class="sumary-title-label">电kWh</span>
+                <span class="sumary-title-data">
+                  <span>22706.8 </span>
+                  <span class="sumary-title-subdata">34570.9</span>
+                </span>
+             
+                <span class="sumary-title-label">能耗kWh</span>
             </div>
             <div class="sumary-title-block">
-                <span class="sumary-title-data">0.0</span>
-                <span class="sumary-title-label">电kWh</span>
+                <span class="sumary-title-data">22706.8</span>
+                <span class="sumary-title-label">实时功率 kW</span>
             </div>
             <div class="sumary-title-block">
-                <span class="sumary-title-data">0.0</span>
-                <span class="sumary-title-label">电kWh</span>
+                <span class="sumary-title-data">22706.8</span>
+                <span class="sumary-title-label">单位面积能耗 kWh/m²</span>
             </div>
             <div class="sumary-title-block">
-                <span class="sumary-title-data">0.0</span>
-                <span class="sumary-title-label">电kWh</span>
+                <span class="sumary-title-data">22706.8</span>
+                <span class="sumary-title-label">单位面积成本 元/m²</span>
             </div>
         </div>
 
+        <!-- 图表 -->
          <div class="chart-data">
-               <!--chart-data-->
               <div class="chart-data-bar" id="container1">1</div>
-              <div class="chart-data-pie"  id="container3">2</div>
-              <div class="chart-data-line"  id="container2">3</div>
+              <div class="chart-data-pie" id="container3">2</div>
+              <div class="chart-data-line" id="container2">3</div>
          </div>
     </div>
 </div>
