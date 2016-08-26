@@ -4,7 +4,6 @@
 var extend = require('extend');
 var each = require('each');
 var menu = require('menu');
-var navTitle = require('navTitle');
 var footer = require('footer');
 
 // 内部变量
@@ -14,7 +13,7 @@ var lastView, timer;
 var views = {
     '404': 'pages/404',
     'index': 'pages/index',
-    'datacenter': 'pages/data-center'
+    'datacenter': 'pages/datacenter'
 };
 
 each(menu.views, function(view){
@@ -131,15 +130,10 @@ exports.render = function(dom){
     // 使用__inline函数嵌入其他文件、图片。这里用作内嵌模板，
     // scrat已经配置了对handlebars后置的文件进行预编译，因此
     // 可以直接内嵌这里文件当做js函数执行
-    var tpl = __inline('site.handlebars');
+    var tpl = __inline('data-center.handlebars');
     dom.innerHTML = tpl({
         views: views
     });
-
-    // 渲染nav-title模块
-    navTitle.render(document.getElementById('site-nav-title'));
-    // 渲染menu模块
-    menu.render(document.getElementById('site-menu'));
     // 渲染footer模块
     footer.render(document.getElementById('site-footer'));
 };

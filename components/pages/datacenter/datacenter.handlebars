@@ -1,0 +1,39 @@
+<div class="data-center">
+    <div id="left_dash"></div>
+    <div id="radar"></div>
+    <div id="right_dash"></div>
+</div>
+
+<div class="data-block">
+    <div class="data-block-item">
+        {{#each datablock}}
+            <div>
+                <span>{{name}}:</span><span class="total-num">{{value}}</span><span>{{unit}}</span>
+            </div>
+            <div>
+                <div> <span>{{data1.name}}:</span><span>{{data1.value}}</span><span>{data1.unit}}</span></div>
+                  {{#if name}}           <
+             <div> <span>{{data2.name}}:</span><span>{{data2.name}}</span><span>{{data2.name}}</span></div>
+         {{/if}}
+              
+            </div>
+            </div>
+        {{/each}}
+
+</div>
+
+<div class="bottom-block">
+    <div class="industry-block">
+        <div class="industry-block-item">
+            <img src={{住宅}}>
+            <div class="name">住宅</div>
+        </div>
+    </div>
+
+    <div class="devicetype-block">
+        <div class="devicetype-block-item">
+            <img src={{供配电}}>
+            <div class="name">供配电</div>
+        </div>
+    </div>
+</div>

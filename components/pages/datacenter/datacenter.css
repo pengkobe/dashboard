@@ -1,0 +1,30 @@
+.data-center{
+    display: flex;
+    flex-direction: row;
+}
+#left_dash,#right_dash{
+    width:25%;
+    text-align: center;
+    height:400px;width:400px
+}
+#radar{
+    width: 50%;
+    background-image:url(./img/earth.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#left_dash, #right_dash, #radar{
+    display: inline-block;
+}
+.data-block,.bottom-block,.industry-block,.devicetype-block{
+    color: #387A84;
+    display: flex;
+    flex-direction: row;
+}
+.data-block-item,industry-block-item,devicetype-block-item{
+    flex:1;
+}
+.total-num{
+    font-size: 32px;
+}

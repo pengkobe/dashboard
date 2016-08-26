@@ -24,7 +24,6 @@ module.exports = {
 
         // 图标菜单点击事件
         $(".sumary-title-menu").on('click', function (e) {
-
         });
 
         setTimeout(function () {
