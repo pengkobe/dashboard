@@ -1,39 +1,94 @@
+<div class="earth"> <img src={{earth}}></div>
+
+<div class="data-title">
+    EFOS ECO GRAPH VIA HIOT
+</div>
+
 <div class="data-center">
-    <div id="left_dash"></div>
-    <div id="radar"></div>
-    <div id="right_dash"></div>
+    <div id="left_dash">
+
+        <div class="left_dash-data">
+            <div class="dash-data-block">
+                <span class="total-num-center subitem-num">12000</span><span class="subitem-unit">个</span>
+                <div class="subitem-label"> <span>运行</span> </div>
+            </div>
+            <div class="dash-data-block">
+                <span class="total-num-center subitem-num">2000</span><span class="subitem-unit">个</span>
+                <div class="subitem-label"> <span>停止</span> </div>
+            </div>
+            <div class="dash-data-block">
+                <span class="total-num-center subitem-num">120</span><span class="subitem-unit">个</span>
+                <div class="subitem-label"> <span>故障</span> </div>
+            </div>
+        </div>
+    </div>
+    <div id="radar">
+        <div class="radar">
+            <div class="pointer"></div>
+            <div class="shadow"></div>
+        </div>
+    </div>
+    <div class="right_dash_div">
+        <div class="right_dash-data">
+            <div class="dash-data-block">
+                <span class="total-num-center subitem-num">12000</span><span class="subitem-unit">kWh</span>
+                <div class="subitem-label"><span>能耗</span></div>
+            </div>
+            <div class="dash-data-block">
+                <span class="total-num-center subitem-num">12000</span> <span class="subitem-unit">kWh</span>
+                <div class="subitem-label"><span>单位面积能耗</span></div>
+            </div>
+            <div class="dash-data-block">
+                <span class="total-num-center subitem-num">12000</span><span class="subitem-unit">kWh</span>
+                <div class="subitem-label"><span>空调面积能耗</span></div>
+            </div>
+        </div>
+        <div id="right_dash"></div>
+    </div>
 </div>
 
 <div class="data-block">
+    {{#each datablock}}
     <div class="data-block-item">
-        {{#each datablock}}
-            <div>
-                <span>{{name}}:</span><span class="total-num">{{value}}</span><span>{{unit}}</span>
-            </div>
-            <div>
-                <div> <span>{{data1.name}}:</span><span>{{data1.value}}</span><span>{data1.unit}}</span></div>
-                  {{#if name}}           <
-             <div> <span>{{data2.name}}:</span><span>{{data2.name}}</span><span>{{data2.name}}</span></div>
-         {{/if}}
-              
-            </div>
-            </div>
-        {{/each}}
-
+        <div class="data-block-item-title">
+            <span>{{name}}:</span><span class="total-num">{{value}}</span><span>{{unit}}</span>
+        </div>
+        <div class="data-block-subitem">
+            {{#if data2.name}}
+            <div> <span>{{data1.name}}:</span><span>{{data1.value}}</span><span>{{data1.unit}}</span></div>
+            <div> <span>{{data2.name}}:</span><span>{{data2.value}}</span><span>{{data2.unit}}</span></div>
+            {{else}}
+           <div> <span >{{data1.name}}:</span><span class="total-num" style="line-height:40px">{{data1.value}}</span><span>{{data1.unit}}</span></div>
+             {{/if}}
+        </div>
+           
+         
+    </div>
+    {{/each}}
 </div>
 
 <div class="bottom-block">
     <div class="industry-block">
-        <div class="industry-block-item">
-            <img src={{住宅}}>
-            <div class="name">住宅</div>
+        <div class="bottom-block-title">行业</div>
+        <div class="industry-block-list">
+            {{#each industryblock}}
+            <div class="industry-block-item">
+                <img src={{src}}>
+                <div class="name">{{name}}</div>
+            </div>
+            {{/each}}
         </div>
     </div>
-
+    <div class="bottom-block-space"></div>
     <div class="devicetype-block">
-        <div class="devicetype-block-item">
-            <img src={{供配电}}>
-            <div class="name">供配电</div>
+        <div class="bottom-block-title">设备类型</div>
+        <div class="devicetype-block-list">
+            {{#each devicetypeblock}}
+            <div class="devicetype-block-item">
+                <img src={{src}}>
+                <div class="name">{{name}}</div>
+            </div>
+            {{/each}}
         </div>
     </div>
 </div>

@@ -134,6 +134,4 @@ exports.render = function(dom){
     dom.innerHTML = tpl({
         views: views
     });
-    // 渲染footer模块
-    footer.render(document.getElementById('site-footer'));
 };

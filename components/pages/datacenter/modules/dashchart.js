@@ -15,9 +15,9 @@ function dashChart(opts) {
     this.defaultOpts = {
         domId: "dash_chart",
         defaultAngle: 0,
-        label: '',
+        label: '设备',
         value: '783331',
-        unit: '',
+        unit: '个',
         total: '1000000',
         // svg size
         width: 280,
@@ -130,19 +130,18 @@ dashChart.prototype.addCustomerAttribute = function (r, color) {
 
 dashChart.prototype.drawText = function (r, circleColor) {
     var option = this.opts;
-    r.text(option.width / 2, option.height - 32, option.label).attr({
-        font: "16px Fontin-Sans, Arial",
-        fill: "#15E9FF",
+    r.text(option.width / 2, option.height/2 + 32, option.label).attr({
+        font: "18px 微软雅黑, Arial",
+        fill: "#387A84",
         "text-anchor": "middle"
     });
-    r.text(option.width / 2 + 42, option.height - 55, option.unit).attr({
-        font: "16px Fontin-Sans, Arial",
-        fill: "#ccc",
+    r.text(option.width / 2 + 75, option.height/2, option.unit).attr({
+        font: "12px 微软雅黑, Arial",
+        fill: "#387A84",
         "text-anchor": "middle"
     });
-    r.text(option.width / 2, option.height / 2,
-        parseFloat(option.value).toFixed(1)).attr({
-            font: "27px Fontin-Sans, Arial",
+    r.text(option.width / 2, option.height / 2, parseFloat(option.value).toFixed(0)).attr({
+            font: "36px Fontin-Sans, Arial",
             fill: circleColor,
             "text-anchor": "middle"
         });
