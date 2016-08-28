@@ -6,19 +6,19 @@ module.exports = {
     render: function (dom) {
 
         var datablock = [
-            { name: "项目", value: 1, unit: '个', data1: { name: "正常", value: 1, unit: '个' }, 
-            data2: { name: "故障", value: 1, unit: '个' } },
-            { name: "建筑面积", value: 1, unit: '公顷', data1: { name: "空调面积", value: 1, unit: '公顷' } },
-            { name: "运维人员", value: 1, unit: '人', data1: { name: "工作", value: 1, unit: '人' }, 
-            data2: { name: "空闲", value: 1, unit: '人' } },
-            { name: "告警", value: 1, unit: '个', data1: { name: "已处理", value: 1, unit: '个' }, 
-            data2: { name: "未处理", value: 1, unit: '个' } },
-            { name: "用户数", value: 1, unit: '人', data1: { name: "在线", value: 1, unit: '人' }, 
-            data2: { name: "不在线", value: 1, unit: '人' } },
-            { name: "流量", value: 1, unit: 'MB', data1: { name: "上传", value: 1, unit: 'MB' }, 
-            data2: { name: "下载", value: 1, unit: 'MB' } },
-            { name: "负荷", value: 1, unit: '%', data1: { name: "负荷率", value: 1, unit: '%' }, 
-            data2: { name: "设备完好率", value: 1, unit: '%' } },
+            { name: "项目", value: 100, unit: '个', data1: { name: "正常", value: 100, unit: '个' },
+            data2: { name: "故障", value: 100, unit: '个' } },
+            { name: "建筑面积", value: 100, unit: '公顷', data1: { name: "空调面积", value: 100, unit: '公顷' } },
+            { name: "运维人员", value: 100, unit: '人', data1: { name: "工作", value: 100, unit: '人' },
+            data2: { name: "空闲", value: 100, unit: '人' } },
+            { name: "告警", value: 100, unit: '个', data1: { name: "已处理", value: 100, unit: '个' },
+            data2: { name: "未处理", value: 100, unit: '个' } },
+            { name: "用户数", value: 100, unit: '人', data1: { name: "在线", value: 100, unit: '人' },
+            data2: { name: "不在线", value: 100, unit: '人' } },
+            { name: "流量", value: 100, unit: 'MB', data1: { name: "上传", value: 100, unit: 'MB' },
+            data2: { name: "下载", value: 100, unit: 'MB' } },
+            { name: "负荷", value: 100, unit: '%', data1: { name: "负荷率", value: 100, unit: '%' },
+            data2: { name: "设备完好率", value: 100, unit: '%' } },
         ];
 
         var industryblock =[
@@ -61,8 +61,8 @@ module.exports = {
             供配电: __uri('./img/devicetype/gongpeidian.png'),
         }
         dom.innerHTML = tpl(data);
-        var left = new dashchart({ domId: "left_dash",label:"设备", value:10000,total:17000,unit:"个"});
-        var right = new dashchart({ domId: "right_dash",label:"负荷", value:121012,total:170000,unit:"kw" });
+        var left = new dashchart({ domId: "left_dash",label:"设备", value:12000,total:17986,unit:"个"});
+        var right = new dashchart({ domId: "right_dash",label:"负荷", value:121012,total:578761,unit:"kw" });
         //  $(".index-circle1").css("transform-origin","0 0").css();
     }
 };

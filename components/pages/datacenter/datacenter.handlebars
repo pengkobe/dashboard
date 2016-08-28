@@ -13,11 +13,11 @@
                 <div class="subitem-label"> <span>运行</span> </div>
             </div>
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">2000</span><span class="subitem-unit">个</span>
+                <span class="total-num-center subitem-num">216</span><span class="subitem-unit">个</span>
                 <div class="subitem-label"> <span>停止</span> </div>
             </div>
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">120</span><span class="subitem-unit">个</span>
+                <span class="total-num-center subitem-num">570</span><span class="subitem-unit">个</span>
                 <div class="subitem-label"> <span>故障</span> </div>
             </div>
         </div>
@@ -31,15 +31,15 @@
     <div class="right_dash_div">
         <div class="right_dash-data">
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">12000</span><span class="subitem-unit">kWh</span>
+                <span class="total-num-center subitem-num">57876</span><span class="subitem-unit">kWh</span>
                 <div class="subitem-label"><span>能耗</span></div>
             </div>
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">12000</span> <span class="subitem-unit">kWh</span>
+                <span class="total-num-center subitem-num">26546</span> <span class="subitem-unit">kWh</span>
                 <div class="subitem-label"><span>单位面积能耗</span></div>
             </div>
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">12000</span><span class="subitem-unit">kWh</span>
+                <span class="total-num-center subitem-num">31330</span><span class="subitem-unit">kWh</span>
                 <div class="subitem-label"><span>空调面积能耗</span></div>
             </div>
         </div>
@@ -50,19 +50,23 @@
 <div class="data-block">
     {{#each datablock}}
     <div class="data-block-item">
-        <div class="data-block-item-title">
-            <span>{{name}}:</span><span class="total-num">{{value}}</span><span>{{unit}}</span>
+        <div class="data-block-item-title data-block-subitem-div">
+            <span class="data-label">{{name}}:</span><span class="total-num data">{{value}}</span>
+            <span class="unit">{{unit}}</span>
         </div>
         <div class="data-block-subitem">
             {{#if data2.name}}
-            <div> <span>{{data1.name}}:</span><span>{{data1.value}}</span><span>{{data1.unit}}</span></div>
-            <div> <span>{{data2.name}}:</span><span>{{data2.value}}</span><span>{{data2.unit}}</span></div>
+                <div class="data-block-subitem-div"> <span class="data-label">{{data1.name}}:</span><span class="data">{{data1.value}}</span>
+                <span class="unit">{{data1.unit}}</span></div>
+                <div class="data-block-subitem-div"> <span class="data-label">{{data2.name}}:</span><span class="data">{{data2.value}}</span>
+                <span class="unit">{{data2.unit}}</span></div>
             {{else}}
-           <div> <span >{{data1.name}}:</span><span class="total-num" style="line-height:40px">{{data1.value}}</span><span>{{data1.unit}}</span></div>
+               <div class="data-block-subitem-div"> <span class="data-label">{{data1.name}}:</span><span class="total-num data" style="line-height:40px">{{data1.value}}</span>
+               <span class="unit">{{data1.unit}}</span></div>
              {{/if}}
         </div>
-           
-         
+
+
     </div>
     {{/each}}
 </div>

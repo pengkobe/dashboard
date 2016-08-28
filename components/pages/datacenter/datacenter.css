@@ -9,14 +9,22 @@
     top:10%;
     bottom: 20%;
 }
+.unit{
+  font-size: 10px;
+}
+.data-label{
+  font-size: 12px;
+}
 .earth img{
     width: 100%;
 }
 
 .data-title{
     color:#D0FFFC;
-    font-size: 44px;
-    margin-bottom: 100px;
+    font-size: 40px;
+      margin-top: 15px;
+        margin-left: 10px;
+    margin-bottom: 85px;
 }
 
 .data-center{
@@ -39,14 +47,14 @@
 }
 #left_dash, .right_dash_div, #radar{
     display: inline-block;
-    padding-top:30px; 
+    padding-top:30px;
 }
 #left_dash{
-     padding-left:30px; 
+     padding-left:30px;
      text-align: left;
 }
 .right_dash_div{
-     padding-right:30px; 
+     padding-right:20px;
      text-align: right;
 }
 
@@ -64,7 +72,7 @@
      text-align: left;
 }
 .right_dash_div .subitem-label{
-   
+
 }
 .bottom-block{
     margin: 40px;
@@ -74,6 +82,7 @@
 }
 .subitem-label{
  color:#387A84;
+ font-size: 16px;
 }
 .subitem-unit{
  color:#387A84;
@@ -94,19 +103,38 @@
 }
 .data-block-item-title,.data-block-subitem{
     border-bottom: solid 1px rgba(41,84,91,.5);
-    width: 60%;
+    width: 75%;
     margin: auto;
 }
+.data-block-subitem{
+  font-size: 12px;
+}
+
+.data-block-subitem-div{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.data-block-subitem-div span:first-child{
+  flex: 3;
+  text-align: right;
+}
+.data-block-subitem-div  .data{
+  flex: 3;
+}
+.data-block-subitem-div span:last-child{
+flex: 1;
+  }
 
 .total-num-center{
     font-size: 27px;
-    font-family: cursive;
+    font-family: -webkit-body,cursive;
 }
 .total-num{
-    font-size: 32px;
+    font-size: 24px;
 }
 .bottom-block{
-    margin-top:35px; 
+    margin-top:35px;
     font-size: 12px;
 }
 .bottom-block-title{

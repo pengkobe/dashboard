@@ -15,7 +15,7 @@
 }
 
 .site {
-    font-family: 微软雅黑;
+    font-family: 微软雅黑,-webkit-body;
     background: #000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -31,7 +31,7 @@
 .site-content {
     position: absolute;
     top: 0px; left: 0px;
-    bottom: 0; 
+    bottom: 0;
     right:0px;
 }
 

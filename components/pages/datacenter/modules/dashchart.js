@@ -20,8 +20,8 @@ function dashChart(opts) {
         unit: '个',
         total: '1000000',
         // svg size
-        width: 280,
-        height: 280,
+        width: 250,
+        height: 250,
         //data group
         dataArray: [{ startAngle: 0, endAngle: 90, color: '#15E9FF' },
             { startAngle: 90, endAngle: 240, color: '#15E9FF' },
@@ -53,18 +53,18 @@ dashChart.prototype.init = function () {
     r.circle(option.width / 2, option.height / 2 , option.height / 2 - 10).attr({
         "fill-opacity": 0,
         "stroke-width": 1,
-        stroke: "#777"
+        stroke: "#444"
     });
 
     // 内 灰色满圈
-    r.circle(option.width / 2, option.height / 2 , option.height / 2 - 50).attr({
+    r.circle(option.width / 2, option.height / 2 , option.height / 2 - 30).attr({
         "fill-opacity": 0,
         "stroke-width": 1,
-        stroke: "#777"
+        stroke: "#aaa"
     });
 
     _self.addCustomerAttribute(r, "#15E9FF");
-    var radius = option.height / 2 - 50;
+    var radius = option.height / 2 - 30;
     // outer cicle
     r.path().attr({
         stroke: "#15E9FF",
@@ -77,7 +77,7 @@ dashChart.prototype.init = function () {
     // the pointer
     var circleColor = '#15E9FF';
     option.value == '' ? 0 : option.value;
-    var position = 360-option.value / option.total * 360;
+    var position = 360-option.value / option.total * 360 -2;
     var y_position = option.height - 25;
     var dataArrLength = option.dataArray.length;
     // 小球指针颜色
@@ -89,13 +89,13 @@ dashChart.prototype.init = function () {
     }
     var range = option.range;
     //if (position > range.start && position < range.end) {
-    y_position = radius - 40;
+    y_position = radius - 65;
    // }
     // 画小球指针圆边框
     r.circle(option.width / 2, y_position, 3).attr({
         fill: circleColor,
         "fill-opacity": 0,
-        "stroke-width": 2,
+        "stroke-width": 3,
         stroke: "#15E9FF",
         transform: "r" + position + " " + option.width / 2 + " " + option.height / 2
     });
@@ -140,8 +140,8 @@ dashChart.prototype.drawText = function (r, circleColor) {
         fill: "#387A84",
         "text-anchor": "middle"
     });
-    r.text(option.width / 2, option.height / 2, parseFloat(option.value).toFixed(0)).attr({
-            font: "36px Fontin-Sans, Arial",
+    r.text(option.width / 2, option.height / 2, parseFloat(option.total).toFixed(0)).attr({
+            font: "36px -webkit-body,Fontin-Sans, Arial",
             fill: circleColor,
             "text-anchor": "middle"
         });
