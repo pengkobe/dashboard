@@ -85,7 +85,7 @@
 
 }
 .bottom-block{
-    margin: 40px;
+    margin: 27px;
 }
 .subitem-num{
    color:#D0FFFC;
@@ -177,11 +177,12 @@ flex: 1;
 .radar {
   background: url(http://gtms03.alicdn.com/tps/i3/TB1Vet9IVXXXXbuapXXb2YSIVXX-567-567.png) no-repeat 50% 50%;
   width: 250px;
+  z-index: 1024;
   height: 250px;
   background-size: 250px 250px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 42%;
   margin-left: -142px;
   margin-top: -142px;
 }

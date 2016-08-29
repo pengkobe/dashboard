@@ -7,39 +7,40 @@
 <div class="data-center">
     <div id="left_dash">
 
-        <div class="left_dash-data">
+    <div class="left_dash-data">
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">12000</span><span class="subitem-unit">个</span>
+                <span class="total-num-center subitem-num">{{c_subdata.device_running}}</span><span class="subitem-unit">个</span>
                 <div class="subitem-label"> <span>运行</span> </div>
             </div>
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">216</span><span class="subitem-unit">个</span>
+                <span class="total-num-center subitem-num">{{c_subdata.device_stop}}</span><span class="subitem-unit">个</span>
                 <div class="subitem-label"> <span>停止</span> </div>
             </div>
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">570</span><span class="subitem-unit">个</span>
+                <span class="total-num-center subitem-num" style="color:red">{{c_subdata.device_broken}}</span>
+                <span class="subitem-unit">个</span>
                 <div class="subitem-label"> <span>故障</span> </div>
             </div>
         </div>
     </div>
+    <!-- radar -->
     <div id="radar">
-        <div class="radar">
-            <div class="pointer"></div>
-            <div class="shadow"></div>
-        </div>
     </div>
     <div class="right_dash_div">
         <div class="right_dash-data">
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">57876</span><span class="subitem-unit">kWh</span>
+                <span class="total-num-center subitem-num">{{c_subdata.energy}}</span>
+                <span class="subitem-unit">万kWh</span>
                 <div class="subitem-label"><span>能耗</span></div>
             </div>
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">26546</span> <span class="subitem-unit">kWh</span>
+                <span class="total-num-center subitem-num">{{c_subdata.unit_engergy}}</span> 
+                <span class="subitem-unit">kWh/m²</span>
                 <div class="subitem-label"><span>单位面积能耗</span></div>
             </div>
             <div class="dash-data-block">
-                <span class="total-num-center subitem-num">31330</span><span class="subitem-unit">kWh</span>
+                <span class="total-num-center subitem-num">{{c_subdata.airC_engergy}}</span>
+                <span class="subitem-unit">kWh/m²</span>
                 <div class="subitem-label"><span>空调面积能耗</span></div>
             </div>
         </div>
@@ -56,17 +57,24 @@
         </div>
         <div class="data-block-subitem">
             {{#if data2.name}}
-                <div class="data-block-subitem-div"> <span class="data-label">{{data1.name}}:</span><span class="data">{{data1.value}}</span>
+                <div class="data-block-subitem-div"> <span class="data-label">{{data1.name}}:</span>
+                <span class="data">{{data1.value}}</span>
                 <span class="unit">{{data1.unit}}</span></div>
-                <div class="data-block-subitem-div"> <span class="data-label">{{data2.name}}:</span><span class="data">{{data2.value}}</span>
+                <div class="data-block-subitem-div"> <span class="data-label">{{data2.name}}:</span>
+
+                {{#if data2.red}}
+                  <span class="data" style="color:red" >{{data2.value}}</span>
+                {{else}}
+                  <span class="data">{{data2.value}}</span>
+                {{/if}}
+
                 <span class="unit">{{data2.unit}}</span></div>
             {{else}}
-               <div class="data-block-subitem-div"> <span class="data-label">{{data1.name}}:</span><span class="total-num data" style="line-height:40px">{{data1.value}}</span>
+               <div class="data-block-subitem-div"> <span class="data-label">{{data1.name}}:</span>
+               <span class="total-num data" style="line-height:40px">{{data1.value}}</span>
                <span class="unit">{{data1.unit}}</span></div>
              {{/if}}
         </div>
-
-
     </div>
     {{/each}}
 </div>

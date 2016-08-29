@@ -23,6 +23,7 @@ function dashChart(opts) {
         sublabel: 'x',
         subvalue: '783331',
         subunit: 'x',
+        subred: false,
         // svg size
         width: 250,
         height: 250,
@@ -111,6 +112,9 @@ dashChart.prototype.init = function () {
 dashChart.prototype.addCustomerAttribute = function (r, color) {
     var option = this.opts;
     r.customAttributes.arc = function (value, total, R) {
+        if (total == value) {
+            value = total - 2;
+        }
         var alpha = 360 / total * value,
             a = (alpha - 270) * Math.PI / 180,
             x = option.width / 2 + R * Math.cos(a),
@@ -151,18 +155,21 @@ dashChart.prototype.drawText = function (r, circleColor) {
     });
 
     // sub data
-    r.text(option.width / 2 - 20, option.height / 2 + 32 + 20, option.sublabel).attr({
+    r.text(option.width / 2 - 30, option.height / 2 + 32 + 20, option.sublabel).attr({
         font: "12px 微软雅黑, Arial",
         fill: "#387A84",
         "text-anchor": "middle"
     });
-
-    r.text(option.width / 2 + 15, option.height / 2 + 32 + 20, option.subvalue).attr({
+    var subcolor = "#387A84";
+    if (option.subred) {
+        subcolor = "#FF0000";
+    }
+    r.text(option.width / 2 + 15, option.height / 2 + 32 + 20, parseFloat(option.subvalue).toFixed(2)).attr({
         font: "14px 微软雅黑, Arial",
-        fill: "#387A84",
+        fill: subcolor,
         "text-anchor": "middle"
     });
-    r.text(option.width / 2 + 35, option.height / 2 + 52, option.subunit).attr({
+    r.text(option.width / 2 + 45, option.height / 2 + 52, option.subunit).attr({
         font: "12px 微软雅黑, Arial",
         fill: "#387A84",
         "text-anchor": "middle"
