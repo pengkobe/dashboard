@@ -19,6 +19,10 @@ function dashChart(opts) {
         value: '783331',
         unit: '个',
         total: '1000000',
+
+        sublabel: 'x',
+        subvalue: '783331',
+        subunit: 'x',
         // svg size
         width: 250,
         height: 250,
@@ -50,14 +54,14 @@ dashChart.prototype.init = function () {
     var r = Raphael(option.domId, option.width, option.height);
 
     // 灰圈
-    r.circle(option.width / 2, option.height / 2 , option.height / 2 - 10).attr({
+    r.circle(option.width / 2, option.height / 2, option.height / 2 - 10).attr({
         "fill-opacity": 0,
         "stroke-width": 1,
         stroke: "#444"
     });
 
     // 内 灰色满圈
-    r.circle(option.width / 2, option.height / 2 , option.height / 2 - 30).attr({
+    r.circle(option.width / 2, option.height / 2, option.height / 2 - 30).attr({
         "fill-opacity": 0,
         "stroke-width": 1,
         stroke: "#aaa"
@@ -70,14 +74,14 @@ dashChart.prototype.init = function () {
         stroke: "#15E9FF",
         "stroke-width": 2
     }).attr({
-        arc: [ option.value,  option.total, radius]
+        arc: [option.value, option.total, radius]
     }).attr({ transform: 'R0' });
 
 
     // the pointer
     var circleColor = '#15E9FF';
     option.value == '' ? 0 : option.value;
-    var position = 360-option.value / option.total * 360 -2;
+    var position = 360 - option.value / option.total * 360 - 2;
     var y_position = option.height - 25;
     var dataArrLength = option.dataArray.length;
     // 小球指针颜色
@@ -90,7 +94,7 @@ dashChart.prototype.init = function () {
     var range = option.range;
     //if (position > range.start && position < range.end) {
     y_position = radius - 65;
-   // }
+    // }
     // 画小球指针圆边框
     r.circle(option.width / 2, y_position, 3).attr({
         fill: circleColor,
@@ -108,7 +112,7 @@ dashChart.prototype.addCustomerAttribute = function (r, color) {
     var option = this.opts;
     r.customAttributes.arc = function (value, total, R) {
         var alpha = 360 / total * value,
-            a = (alpha-270) * Math.PI / 180,
+            a = (alpha - 270) * Math.PI / 180,
             x = option.width / 2 + R * Math.cos(a),
             y = option.height / 2 - R * Math.sin(a),
             path;
@@ -130,21 +134,39 @@ dashChart.prototype.addCustomerAttribute = function (r, color) {
 
 dashChart.prototype.drawText = function (r, circleColor) {
     var option = this.opts;
-    r.text(option.width / 2, option.height/2 + 32, option.label).attr({
-        font: "18px 微软雅黑, Arial",
+    r.text(option.width / 2, option.height / 2 + 32 - 20, option.label).attr({
+        font: "18px 'Roboto Light'",// 微软雅黑, Arial
         fill: "#387A84",
         "text-anchor": "middle"
     });
-    r.text(option.width / 2 + 75, option.height/2, option.unit).attr({
+    r.text(option.width / 2 + 75, option.height / 2 - 20, option.unit).attr({
         font: "12px 微软雅黑, Arial",
         fill: "#387A84",
         "text-anchor": "middle"
     });
-    r.text(option.width / 2, option.height / 2, parseFloat(option.total).toFixed(0)).attr({
-            font: "36px -webkit-body,Fontin-Sans, Arial",
-            fill: circleColor,
-            "text-anchor": "middle"
-        });
+    r.text(option.width / 2, option.height / 2 - 20, parseFloat(option.total).toFixed(0)).attr({
+        font: "36px 'Roboto Light'",// monospace,-webkit-body,Fontin-Sans, Arial
+        fill: circleColor,
+        "text-anchor": "middle"
+    });
+
+    // sub data
+    r.text(option.width / 2 - 20, option.height / 2 + 32 + 20, option.sublabel).attr({
+        font: "12px 微软雅黑, Arial",
+        fill: "#387A84",
+        "text-anchor": "middle"
+    });
+
+    r.text(option.width / 2 + 15, option.height / 2 + 32 + 20, option.subvalue).attr({
+        font: "14px 微软雅黑, Arial",
+        fill: "#387A84",
+        "text-anchor": "middle"
+    });
+    r.text(option.width / 2 + 35, option.height / 2 + 52, option.subunit).attr({
+        font: "12px 微软雅黑, Arial",
+        fill: "#387A84",
+        "text-anchor": "middle"
+    });
 };
 
 

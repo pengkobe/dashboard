@@ -51,7 +51,7 @@
     {{#each datablock}}
     <div class="data-block-item">
         <div class="data-block-item-title data-block-subitem-div">
-            <span class="data-label">{{name}}:</span><span class="total-num data">{{value}}</span>
+            <span class="data-label-total">{{name}}:</span><span class="total-num data">{{value}}</span>
             <span class="unit">{{unit}}</span>
         </div>
         <div class="data-block-subitem">
@@ -78,19 +78,19 @@
             {{#each industryblock}}
             <div class="industry-block-item">
                 <img src={{src}}>
-                <div class="name">{{name}}</div>
+                <div class="data-label name">{{name}}</div>
             </div>
             {{/each}}
         </div>
     </div>
     <div class="bottom-block-space"></div>
     <div class="devicetype-block">
-        <div class="bottom-block-title">设备类型</div>
+        <div class="bottom-block-title ">设备类型</div>
         <div class="devicetype-block-list">
             {{#each devicetypeblock}}
             <div class="devicetype-block-item">
                 <img src={{src}}>
-                <div class="name">{{name}}</div>
+                <div class="data-label name">{{name}}</div>
             </div>
             {{/each}}
         </div>

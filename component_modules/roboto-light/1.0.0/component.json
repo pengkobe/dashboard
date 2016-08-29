@@ -1,0 +1,12 @@
+{
+    "name" : "roboto-light",
+    "main" : "roboto-light.css",
+    "version" : "1.0.0",
+    "scripts" : [
+        "roboto-light.css",
+        "Roboto-Light.eot",
+        "Roboto-Light.svg",
+        "Roboto-Light.ttf",
+        "Roboto-Light.woff"
+    ]
+}

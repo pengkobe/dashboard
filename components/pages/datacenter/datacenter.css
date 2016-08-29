@@ -1,19 +1,28 @@
+
 .earth{
     z-index: -1;
-    width: 40%;
+    width: 35%;
     margin: auto;
     text-align: center;
     position: absolute;
     left: 10%;
     right: 10%;
-    top:10%;
+    top:8%;
     bottom: 20%;
 }
 .unit{
+  color: #2F646C;
   font-size: 10px;
+  transform: scale(.8);
 }
 .data-label{
   font-size: 12px;
+  transform: scale(.8);
+  font-family: "微软雅黑";
+}
+.data-label-total{
+  font-size: 12px;
+  font-family: "微软雅黑";
 }
 .earth img{
     width: 100%;
@@ -21,10 +30,11 @@
 
 .data-title{
     color:#D0FFFC;
+    font-family:"Roboto Light";
     font-size: 40px;
-      margin-top: 15px;
-        margin-left: 10px;
-    margin-bottom: 85px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 45px;
 }
 
 .data-center{
@@ -83,10 +93,12 @@
 .subitem-label{
  color:#387A84;
  font-size: 16px;
+  font-family: "微软雅黑";
 }
 .subitem-unit{
- color:#387A84;
- font-size: 12px;
+ color:#2F646C;
+ font-size: 10px;
+ transform: scale(.8);
 }
 
 .data-block,.bottom-block,.industry-block-list,.devicetype-block-list{
@@ -119,6 +131,11 @@
   flex: 3;
   text-align: right;
 }
+.data{
+    font-family:"Roboto Light";
+    font-size: 14px;
+    transform: scale(1);
+}
 .data-block-subitem-div  .data{
   flex: 3;
 }
@@ -128,18 +145,22 @@ flex: 1;
 
 .total-num-center{
     font-size: 27px;
-    font-family: -webkit-body,cursive;
+     font-family:"Roboto Light";
 }
 .total-num{
     font-size: 24px;
 }
 .bottom-block{
-    margin-top:35px;
+    margin-top:25px;
     font-size: 12px;
 }
 .bottom-block-title{
     text-align: left;
-    border-bottom: solid 1px rgba(41,84,91,.5);
+    font-size: 12px;
+    font-family: "微软雅黑";
+    border-bottom: solid 2px rgba(41,84,91,.5);
+    padding-bottom:4px;
+    margin-bottom: 4px; 
 }
 .bottom-block-space{
     width: 50px;
@@ -155,9 +176,9 @@ flex: 1;
 /**雷达动画css http://codepen.io/yisi/pen/LVMmQy*/
 .radar {
   background: url(http://gtms03.alicdn.com/tps/i3/TB1Vet9IVXXXXbuapXXb2YSIVXX-567-567.png) no-repeat 50% 50%;
-  width: 284px;
-  height: 284px;
-  background-size: 284px 284px;
+  width: 250px;
+  height: 250px;
+  background-size: 250px 250px;
   position: absolute;
   left: 50%;
   top: 50%;
