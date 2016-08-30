@@ -67,7 +67,7 @@ module.exports = {
                 device_running: params.device_running,
                 device_stop: params.device_stop,
                 device_broken: params.device_broken,
-                energy: params.energy,
+                energy:parseFloat(params.energy).toFixed(1),
                 unit_engergy: params.unit_engergy,
                 airC_engergy: params.airC_engergy
             };
@@ -84,6 +84,7 @@ module.exports = {
                 { src: __uri('./img/industry/chuanbo.png'), name: '船舶' },
                 { src: __uri('./img/industry/guidaojiaotong.png'), name: '轨道运输' },
                 { src: __uri('./img/industry/jiudian.png'), name: '酒店' },
+                  { src: __uri('./img/industry/other.png'), name: '其它' },
             ];
 
             // 设备类型应用
@@ -99,6 +100,7 @@ module.exports = {
                 { src: __uri('./img/devicetype/shipinanfang.png'), name: '视频安防' },
                 { src: __uri('./img/devicetype/tongpaifeng.png'), name: '通排风' },
                 { src: __uri('./img/devicetype/menjin.png'), name: '门禁' },
+                  { src: __uri('./img/industry/other.png'), name: '其它' },
             ];
 
             var tpl = __inline('datacenter.handlebars');
@@ -123,7 +125,7 @@ module.exports = {
             var left = new dashchart({
                 domId: "left_dash",
                 subred: subcolor,
-                label: "设备", value: dtotal, total: params.devicenum, unit: "个",
+                label: "设备总数", value: dtotal, total: params.devicenum, unit: "个",
                 sublabel: "完好率", subvalue: params.device_good_rate, subunit: "%"
             });
             var ttotal = params.device_load * params.device_load_rate / 100;
@@ -135,7 +137,7 @@ module.exports = {
             var right = new dashchart({
                 domId: "right_dash",
                 subred: subcolor,
-                label: "负荷", value: ttotal, total: params.device_load, unit: "kw",
+                label: "当前负荷", value: ttotal, total: params.device_load, unit: "kw",
                 sublabel: "负载率", subvalue: params.device_load_rate, subunit: "%"
             });
         }

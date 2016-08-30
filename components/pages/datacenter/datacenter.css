@@ -1,4 +1,3 @@
-
 .earth{
     z-index: -1;
     width: 35%;
@@ -174,8 +173,8 @@ flex: 1;
 
 
 /**雷达动画css http://codepen.io/yisi/pen/LVMmQy*/
-.radar {
-  background: url(http://gtms03.alicdn.com/tps/i3/TB1Vet9IVXXXXbuapXXb2YSIVXX-567-567.png) no-repeat 50% 50%;
+/*.radar {
+  background: url(./img/earth.png) no-repeat 50% 50%;
   width: 250px;
   z-index: 1024;
   height: 250px;
@@ -185,7 +184,42 @@ flex: 1;
   top: 42%;
   margin-left: -142px;
   margin-top: -142px;
+}*/
+
+.radar-div{
+   background: url(./img/earth.png) no-repeat 50% 50%;
+    width: 500px;
+    z-index: 1;
+    height: 500px;
+    background-size: 500px 500px;
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    margin-left: -250px;
+    margin-top: -250px;
 }
+.inner-circle{
+  width: 10px;height: 10px;
+  background: #a8bfbe;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: 10%;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+.radar {
+  width: 306px;
+  height: 306px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: 10%;
+  margin-left: -153px;
+  margin-top: -153px;
+}
+
 
 .radar .pointer {
   position: absolute;
@@ -224,7 +258,7 @@ flex: 1;
   bottom: 11%;
   margin: auto;
   border-radius: 9999px;
-  box-shadow: 0 0 66px 6px rgba(0, 231, 244, 0.6);
+  box-shadow: 0 0 26px 3px rgba(0, 231, 244, 0.6);
   -webkit-animation: shadow 1s infinite ease;
           animation: shadow 1s infinite ease;
 }

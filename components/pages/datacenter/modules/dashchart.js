@@ -143,7 +143,7 @@ dashChart.prototype.drawText = function (r, circleColor) {
         fill: "#387A84",
         "text-anchor": "middle"
     });
-    r.text(option.width / 2 + 75, option.height / 2 - 20, option.unit).attr({
+    r.text(option.width / 2 + 78, option.height / 2 - 20, option.unit).attr({
         font: "12px 微软雅黑, Arial",
         fill: "#387A84",
         "text-anchor": "middle"
@@ -155,7 +155,7 @@ dashChart.prototype.drawText = function (r, circleColor) {
     });
 
     // sub data
-    r.text(option.width / 2 - 30, option.height / 2 + 32 + 20, option.sublabel).attr({
+    r.text(option.width / 2 - 25, option.height / 2 + 32 + 20, option.sublabel).attr({
         font: "12px 微软雅黑, Arial",
         fill: "#387A84",
         "text-anchor": "middle"
@@ -164,12 +164,12 @@ dashChart.prototype.drawText = function (r, circleColor) {
     if (option.subred) {
         subcolor = "#FF0000";
     }
-    r.text(option.width / 2 + 15, option.height / 2 + 32 + 20, parseFloat(option.subvalue).toFixed(2)).attr({
+    r.text(option.width / 2 + 15, option.height / 2 + 32 + 20, parseFloat(option.subvalue).toFixed(1)).attr({
         font: "14px 微软雅黑, Arial",
         fill: subcolor,
         "text-anchor": "middle"
     });
-    r.text(option.width / 2 + 45, option.height / 2 + 52, option.subunit).attr({
+    r.text(option.width / 2 + 40, option.height / 2 + 52, option.subunit).attr({
         font: "12px 微软雅黑, Arial",
         fill: "#387A84",
         "text-anchor": "middle"
